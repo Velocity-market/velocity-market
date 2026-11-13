@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Velocity Market · Autos, motos, teléfonos y accesorios</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.453.0/dist/umd/lucide.min.js"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{sans:['Plus Jakarta Sans','system-ui','sans-serif']},colors:{acc:'#2f6bff'}}}}</script>
+<style>
+:root{color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:calc(88px + env(safe-area-inset-top,0px))}
+body{background:#020617;color:#f8fafc;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.ph{background:linear-gradient(135deg,#1e293b,#0f172a);display:flex;align-items:center;justify-content:center;color:#475569}
+.chip{transition:.2s}.chip.on{background:#2f6bff;color:#fff;border-color:#2f6bff}
+.f{margin-top:.25rem;width:100%;background:#020617;border:1px solid #1e293b;border-radius:.75rem;padding:.625rem .75rem;font-weight:400}.f:focus{outline:2px solid #2f6bff}
+#openCart,#overlay,#drawer{display:none!important}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body class="antialiased">
+
+<!-- NAVBAR -->
+<header class="fixed top-0 inset-x-0 z-40 bg-slate-950/90 backdrop-blur border-b border-slate-800" style="padding-top:env(safe-area-inset-top,0px)">
+  <div class="max-w-7xl mx-auto px-4 h-16 flex items-center gap-3">
+    <a href="#inicio" class="flex items-center gap-2 font-extrabold text-lg shrink-0"><span class="w-8 h-8 rounded-lg bg-acc grid place-items-center"><i data-lucide="gauge" class="w-5 h-5"></i></span>Velocity<span class="text-acc">Market</span></a>
+    <nav class="hidden lg:flex items-center gap-1 ml-4 text-sm font-semibold text-slate-300" id="navLinks"></nav>
+    <div class="relative flex-1 max-w-md ml-auto">
+      <i data-lucide="search" class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-500"></i>
+      <input id="search" type="search" placeholder="Buscar…" aria-label="Buscar productos" class="w-full bg-slate-900 border border-slate-800 rounded-xl pl-9 pr-3 py-2 text-sm placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-acc">
+    </div>
+    <button id="openPublish" class="shrink-0 bg-acc hover:bg-blue-500 transition rounded-xl px-3 sm:px-4 py-2.5 text-sm font-bold flex items-center gap-1.5"><i data-lucide="plus-circle" class="w-4 h-4"></i><span class="hidden sm:inline">Publicar</span></button>
+    <button id="openCart" aria-label="Abrir carrito" class="relative p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-acc">
+      <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+      <span id="cartCount" class="absolute -top-1.5 -right-1.5 min-w-[20px] h-5 px-1 rounded-full bg-acc text-xs font-bold grid place-items-center">0</span>
+    </button>
+  </div>
+</header>
+
+<main class="pt-16">
+<!-- HERO -->
+<section id="inicio" class="relative min-h-[78vh] flex items-center overflow-hidden bg-slate-900">
+  <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1800&q=80" alt="" class="absolute inset-0 w-full h-full object-cover opacity-50" onerror="this.remove()">
+  <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent"></div>
+  <div class="relative max-w-7xl mx-auto px-4 py-20 w-full">
+    <p class="inline-flex items-center gap-2 text-xs font-semibold bg-acc/15 text-blue-300 border border-acc/30 rounded-full px-3 py-1 mb-5"><i data-lucide="badge-check" class="w-4 h-4"></i>Compra, vende y ofrece tus servicios</p>
+    <h1 class="text-4xl sm:text-6xl font-extrabold leading-[1.05] max-w-2xl">Tu próximo auto, moto o teléfono, <span class="text-acc">hoy mismo</span>.</h1>
+    <p class="mt-5 text-slate-300 text-lg max-w-xl">Compra y vende autos, motos, teléfonos y accesorios, o publica tus servicios de construcción, remodelación y más. Recibe contactos directo por WhatsApp.</p>
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a href="#catalogo" class="bg-acc hover:bg-blue-500 transition px-6 py-3.5 rounded-xl font-bold flex items-center gap-2"><i data-lucide="layout-grid" class="w-5 h-5"></i>Explorar catálogo</a>
+      <button type="button" id="btnOfertas" class="bg-white/10 hover:bg-white/20 border border-white/20 transition px-6 py-3.5 rounded-xl font-bold flex items-center gap-2"><i data-lucide="plus-circle" class="w-5 h-5"></i>Publicar mi anuncio</button>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFICIOS -->
+<section class="bg-slate-900 border-y border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 py-6 grid grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
+    <div class="flex items-center gap-3"><i data-lucide="message-circle" class="w-7 h-7 text-acc shrink-0"></i><div><b class="block">Contacto directo</b><span class="text-slate-400">Habla con el vendedor</span></div></div>
+    <div class="flex items-center gap-3"><i data-lucide="shield-check" class="w-7 h-7 text-acc shrink-0"></i><div><b class="block">Compra con cuidado</b><span class="text-slate-400">Revisa antes de pagar</span></div></div>
+    <div class="flex items-center gap-3"><i data-lucide="megaphone" class="w-7 h-7 text-acc shrink-0"></i><div><b class="block">Publica tu anuncio</b><span class="text-slate-400">Productos y servicios</span></div></div>
+    <div class="flex items-center gap-3"><i data-lucide="headset" class="w-7 h-7 text-acc shrink-0"></i><div><b class="block">Soporte</b><span class="text-slate-400">Escríbenos por WhatsApp</span></div></div>
+  </div>
+</section>
+
+<!-- CATÁLOGO -->
+<section id="catalogo" class="max-w-7xl mx-auto px-4 py-14">
+  <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
+    <div><h2 class="text-3xl font-extrabold">Catálogo</h2><p id="resultInfo" class="text-slate-400 mt-1"></p></div>
+    <label class="flex items-center gap-2 text-sm text-slate-300">Ordenar por
+      <select id="sort" class="bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-acc">
+        <option value="rel">Relevancia</option><option value="asc">Precio: menor a mayor</option><option value="desc">Precio: mayor a menor</option>
+      </select>
+    </label>
+  </div>
+  <div id="chips" class="flex flex-wrap gap-2 mb-8"></div>
+  <div id="grid" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"></div>
+  <p id="empty" class="hidden text-center text-slate-400 py-16">No encontramos productos con esa búsqueda. Prueba con otra palabra o cambia de categoría.</p>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="bg-slate-900 border-y border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 py-14 grid lg:grid-cols-2 gap-10">
+    <div>
+      <h2 class="text-3xl font-extrabold">Escríbenos si tienes dudas</h2>
+      <p class="text-slate-300 mt-3 max-w-md">Cuéntanos qué buscas o en qué necesitas ayuda y te responderemos por WhatsApp.</p>
+      <ul class="mt-6 space-y-3 text-slate-300">
+        <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-acc shrink-0"></i>Respuesta rápida por WhatsApp</li>
+        <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-acc shrink-0"></i>Te ayudamos a publicar tu anuncio</li>
+        <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-acc shrink-0"></i>Orientación para comprar y vender con seguridad</li>
+      </ul>
+    </div>
+    <form id="quoteForm" class="bg-slate-950 border border-slate-800 rounded-2xl p-6 grid gap-4">
+      <div class="grid sm:grid-cols-2 gap-4">
+        <label class="text-sm font-semibold">Nombre<input required name="n" class="mt-1 w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2.5 font-normal focus:outline-none focus:ring-2 focus:ring-acc"></label>
+        <label class="text-sm font-semibold">Teléfono<input required type="tel" name="t" class="mt-1 w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2.5 font-normal focus:outline-none focus:ring-2 focus:ring-acc"></label>
+      </div>
+      <label class="text-sm font-semibold">Me interesa
+        <select name="i" class="mt-1 w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2.5 font-normal focus:outline-none focus:ring-2 focus:ring-acc">
+          <option>Comprar un vehículo</option><option>Vender mi vehículo</option><option>Teléfonos y accesorios</option><option>Otra consulta</option>
+        </select></label>
+      <label class="text-sm font-semibold">Mensaje<textarea name="m" rows="3" class="mt-1 w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2.5 font-normal focus:outline-none focus:ring-2 focus:ring-acc" placeholder="Modelo, presupuesto, plazo…"></textarea></label>
+      <button class="bg-acc hover:bg-blue-500 transition rounded-xl py-3 font-bold flex items-center justify-center gap-2"><i data-lucide="message-circle" class="w-5 h-5"></i>Enviar por WhatsApp</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="max-w-7xl mx-auto px-4 py-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-8 text-sm text-slate-400">
+  <div><div class="font-extrabold text-lg text-white mb-3">Velocity<span class="text-acc">Market</span></div><p>Compra y vende autos, motos, teléfonos y accesorios directo con otras personas.</p></div>
+  <div><b class="text-white block mb-3">Comprar</b><ul class="space-y-2"><li><a class="hover:text-white" href="#catalogo" data-go="Autos">Autos</a></li><li><a class="hover:text-white" href="#catalogo" data-go="Motos">Motos</a></li><li><a class="hover:text-white" href="#catalogo" data-go="Teléfonos">Teléfonos</a></li><li><a class="hover:text-white" href="#catalogo" data-go="Accesorios">Accesorios</a></li><li><a class="hover:text-white" href="#catalogo" data-go="Servicios">Servicios</a></li></ul></div>
+  <div><b class="text-white block mb-3">Quiénes somos</b><p class="leading-relaxed">Velocity Market es un marketplace venezolano para comprar y vender autos, motos, teléfonos y accesorios. Reunimos en un solo lugar a quienes venden y a quienes buscan: publicas tu anuncio, el comprador ve fotos y precio al instante y el trato se cierra directo por WhatsApp. También puedes ofrecer tus servicios, como construcción y remodelación.</p></div>
+  <div><b class="text-white block mb-3">Síguenos</b><div class="flex gap-3">
+    <a href="#" aria-label="Instagram" class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-acc"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+    <a href="#" aria-label="Facebook" class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-acc"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+    <a href="#" aria-label="YouTube" class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-acc"><i data-lucide="youtube" class="w-5 h-5"></i></a></div></div>
+  <p class="sm:col-span-2 lg:col-span-4 border-t border-slate-800 pt-6">© 2026 Velocity Market. Todos los derechos reservados.</p>
+</footer>
+
+<!-- WHATSAPP FLOTANTE -->
+<a id="wa" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp" class="fixed right-4 z-30 w-14 h-14 rounded-full bg-[#25D366] grid place-items-center shadow-xl hover:scale-105 transition" style="bottom:calc(1rem + env(safe-area-inset-bottom,0px))"><i data-lucide="message-circle" class="w-7 h-7 text-white"></i></a>
+
+<!-- MODAL -->
+<div id="modal" class="hidden fixed inset-0 z-50 bg-black/70 p-4 overflow-y-auto" role="dialog" aria-modal="true">
+  <div class="max-w-4xl mx-auto my-6 bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden grid md:grid-cols-2 relative">
+    <button id="closeModal" aria-label="Cerrar" class="absolute top-3 right-3 z-10 p-2 rounded-full bg-slate-950/80 hover:bg-slate-950"><i data-lucide="x" class="w-5 h-5"></i></button>
+    <div id="mImg" class="min-h-[240px] md:min-h-full"></div>
+    <div class="p-6 flex flex-col gap-4">
+      <div><span id="mTag" class="text-xs font-bold px-2.5 py-1 rounded-full bg-acc/20 text-blue-300"></span>
+      <h3 id="mName" class="text-2xl font-extrabold mt-3"></h3><p id="mPrice" class="text-3xl font-extrabold text-acc mt-1"></p></div>
+      <p id="mDesc" class="text-slate-300"></p>
+      <div><b class="text-sm">Ficha técnica</b><dl id="mSpecs" class="mt-2 divide-y divide-slate-800 text-sm"></dl></div>
+      <div class="flex flex-col sm:flex-row gap-3 mt-auto">
+        <button id="mAdd" style="display:none" class="flex-1 bg-acc hover:bg-blue-500 transition rounded-xl py-3 font-bold flex items-center justify-center gap-2"><i data-lucide="shopping-cart" class="w-5 h-5"></i>Agregar al carrito</button>
+        <a id="mWa" target="_blank" rel="noopener" class="flex-1 bg-[#25D366] hover:brightness-110 transition rounded-xl py-3 font-bold text-slate-950 flex items-center justify-center gap-2"><i data-lucide="message-circle" class="w-5 h-5"></i>Consultar por WhatsApp</a>
+      </div>
+      <a id="mReport" target="_blank" rel="noopener" class="text-xs text-slate-400 hover:text-rose-400 underline text-center">Reportar este anuncio</a>
+    </div>
+  </div>
+</div>
+
+<!-- CARRITO -->
+<div id="overlay" class="hidden fixed inset-0 z-50 bg-black/60"></div>
+<aside id="drawer" class="fixed top-0 right-0 z-50 h-full w-full max-w-md bg-slate-900 border-l border-slate-800 flex flex-col translate-x-full transition-transform duration-300" style="padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)">
+  <div class="flex items-center justify-between p-4 border-b border-slate-800"><h3 class="font-extrabold text-lg">Tu carrito</h3><button id="closeCart" aria-label="Cerrar carrito" class="p-2 rounded-lg hover:bg-slate-800"><i data-lucide="x" class="w-5 h-5"></i></button></div>
+  <div id="cartItems" class="flex-1 overflow-y-auto p-4 space-y-3"></div>
+  <div class="p-4 border-t border-slate-800 space-y-3">
+    <div class="flex justify-between text-sm text-slate-300"><span>Subtotal</span><span id="subtotal"></span></div>
+    <div class="flex justify-between text-lg font-extrabold"><span>Total</span><span id="total"></span></div>
+    <button id="checkout" class="w-full bg-acc hover:bg-blue-500 transition rounded-xl py-3 font-bold">Finalizar compra / Solicitar cotización</button>
+  </div>
+</aside>
+
+<!-- PUBLICAR ANUNCIO -->
+<div id="pub" class="hidden fixed inset-0 z-50 bg-black/70 p-4 overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="pubTitle">
+  <form id="pubForm" class="max-w-xl mx-auto my-6 bg-slate-900 border border-slate-800 rounded-2xl p-6 grid gap-4 relative">
+    <button type="button" id="closePub" aria-label="Cerrar" class="absolute top-3 right-3 p-2 rounded-full hover:bg-slate-800"><i data-lucide="x" class="w-5 h-5"></i></button>
+    <h3 id="pubTitle" class="text-2xl font-extrabold">Publicar anuncio</h3>
+    <label class="text-sm font-semibold">Categoría<select name="cat" class="f"><option>Autos</option><option>Motos</option><option>Teléfonos</option><option>Accesorios</option><option>Servicios</option></select></label>
+    <label class="text-sm font-semibold">Título<input required name="title" minlength="3" maxlength="120" placeholder="Ej: Toyota Corolla 2018, 60.000 km" class="f"></label>
+    <label class="text-sm font-semibold">Precio (USD)<input required name="price" type="number" min="1" step="any" inputmode="decimal" class="f"></label>
+    <label class="text-sm font-semibold">Descripción<textarea required name="desc" rows="4" maxlength="2000" placeholder="Estado, año, kilometraje, detalles importantes…" class="f"></textarea></label>
+    <label class="text-sm font-semibold">Fotos (de 1 a 4)<input required id="photos" type="file" accept="image/*" multiple class="f"></label>
+    <div class="grid sm:grid-cols-2 gap-4">
+      <label class="text-sm font-semibold">Tu nombre<input required name="name" minlength="2" maxlength="80" class="f"></label>
+      <label class="text-sm font-semibold">Tu WhatsApp<input required name="wa" type="tel" inputmode="numeric" placeholder="584141234567" class="f"></label>
+    </div>
+    <p class="text-xs text-slate-400 -mt-2">El WhatsApp va con código de país y solo números. Será visible para los compradores.</p>
+    <input name="web" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+    <p id="pubErr" class="hidden text-rose-400 text-sm"></p>
+    <button id="pubBtn" class="bg-acc hover:bg-blue-500 transition rounded-xl py-3 font-bold">Publicar ahora</button>
+  </form>
+</div>
+
+<div id="toast" class="fixed left-1/2 -translate-x-1/2 z-[60] bg-slate-100 text-slate-900 font-semibold text-sm px-4 py-2.5 rounded-xl shadow-xl opacity-0 pointer-events-none transition-opacity" style="bottom:calc(5.5rem + env(safe-area-inset-bottom,0px))"></div>
+
+<script>
+const WA='584245334146';
+const SB='https://sjftwqnasmppdwtjlvpw.supabase.co';
+const KEY='sb_publishable_mgcTqrJyn1zjTLpk_RqlEA_SBPxFD6A';
+const H={apikey:KEY};
+const CATS=['Todos','Autos','Motos','Teléfonos','Accesorios','Servicios'];
+const ICON={Autos:'car',Motos:'bike',Teléfonos:'smartphone',Accesorios:'headphones',Servicios:'hammer'};
+let PRODUCTS=[];
+const $=s=>document.querySelector(s);
+const money=n=>'$'+n.toLocaleString('es-VE');
+let cat='Todos',q='',sort='rel',onlyDeals=false,cart=[],current=null,loadErr=false,loaded=false;
+const icons=()=>lucide.createIcons();
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+const imgHTML=p=>`<div class="ph w-full h-full"><i data-lucide="${ICON[p.cat]}" class="w-12 h-12"></i></div>${p.img?`<img src="${esc(p.img)}" alt="${esc(p.name)}" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()">`:''}`;
+const toast=m=>{const t=$('#toast');t.textContent=m;t.style.opacity=1;clearTimeout(toast.t);toast.t=setTimeout(()=>t.style.opacity=0,2200)};
+
+function drawNav(){
+  $('#navLinks').innerHTML=CATS.map(c=>`<button data-cat="${c}" class="px-3 py-2 rounded-lg hover:bg-slate-800 hover:text-white">${c}</button>`).join('');
+  $('#chips').innerHTML=CATS.map(c=>`<button data-cat="${c}" class="chip border border-slate-700 rounded-full px-5 py-2 text-sm font-semibold ${c===cat&&!onlyDeals?'on':''}">${c}</button>`).join('');
+}
+function setCat(c){cat=c;onlyDeals=false;drawNav();render()}
+
+function render(){
+  let list=PRODUCTS.filter(p=>(cat==='Todos'||p.cat===cat)&&(!onlyDeals||p.tag==='Oferta'||p.tag==='Destacado')&&(p.name+' '+p.cat+' '+p.desc).toLowerCase().includes(q));
+  if(sort==='asc')list.sort((a,b)=>a.price-b.price);
+  if(sort==='desc')list.sort((a,b)=>b.price-a.price);
+  $('#resultInfo').textContent=loaded?`${list.length} ${list.length===1?'anuncio':'anuncios'}`:'Cargando anuncios…';
+  $('#empty').classList.toggle('hidden',list.length>0||!loaded);
+  $('#empty').textContent=loadErr?'No pudimos cargar los anuncios. Revisa tu conexión e intenta de nuevo.':(PRODUCTS.length?'No encontramos anuncios con esa búsqueda.':'Aún no hay anuncios. ¡Sé el primero en publicar!');
+  $('#grid').innerHTML=list.map(p=>{
+    const k=Object.entries(p.specs).slice(0,2).map(([a,b])=>`<span class="bg-slate-800 rounded-md px-2 py-1">${a}: ${esc(b)}</span>`).join('');
+    return `<article class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col hover:border-acc/60 transition">
+      <div class="relative aspect-[4/3] overflow-hidden">${imgHTML(p)}${p.tag?`<span class="absolute top-3 left-3 bg-emerald-500 text-xs font-bold px-2.5 py-1 rounded-full">${esc(p.tag)}</span>`:''}</div>
+      <div class="p-4 flex flex-col gap-3 flex-1">
+        <div><p class="text-xs text-slate-400">${p.cat}</p><h3 class="font-bold leading-snug">${esc(p.name)}</h3></div>
+        <div class="flex flex-wrap gap-1.5 text-xs text-slate-300">${k}</div>
+        <p class="text-2xl font-extrabold mt-auto">${money(p.price)}</p>
+        <div class="grid grid-cols-2 gap-2">
+          <button data-view="${p.id}" class="border border-slate-700 hover:border-acc rounded-xl py-2.5 text-sm font-semibold">Ver detalles</button>
+          <a href="https://wa.me/${p.wa}?text=${encodeURIComponent('Hola, vi tu anuncio en Velocity Market: '+p.name)}" target="_blank" rel="noopener" class="bg-[#25D366] hover:brightness-110 text-slate-950 rounded-xl py-2.5 text-sm font-bold flex items-center justify-center gap-1.5"><i data-lucide="message-circle" class="w-4 h-4"></i>WhatsApp</a>
+        </div></div></article>`}).join('');
+  icons();
+}
+
+function openModal(id){
+  const p=PRODUCTS.find(x=>x.id==id);current=p;
+  $('#mImg').className='relative min-h-[240px] md:min-h-full';$('#mImg').innerHTML=imgHTML(p);
+  if(p.imgs.length>1)$('#mImg').insertAdjacentHTML('beforeend',`<div class="absolute bottom-3 left-3 right-3 flex gap-2 overflow-x-auto">${p.imgs.map(u=>`<img src="${esc(u)}" alt="" class="w-14 h-14 object-cover rounded-lg border border-white/30 cursor-pointer shrink-0" onclick="this.closest('#mImg').querySelector('img').src=this.src">`).join('')}</div>`);
+  $('#mTag').textContent=p.tag||p.cat;$('#mName').textContent=p.name;$('#mPrice').textContent=money(p.price);$('#mDesc').textContent=p.desc;
+  $('#mSpecs').innerHTML=Object.entries(p.specs).map(([a,b])=>`<div class="flex justify-between py-2"><dt class="text-slate-400">${a}</dt><dd class="font-semibold">${esc(b)}</dd></div>`).join('');
+  $('#mReport').href=`https://wa.me/${WA}?text=${encodeURIComponent('Quiero reportar este anuncio: '+p.name+' (ID '+p.id+')')}`;
+  $('#mWa').href=`https://wa.me/${p.wa}?text=${encodeURIComponent('Hola, vi tu anuncio en Velocity Market: '+p.name+' ('+money(p.price)+')')}`;
+  $('#modal').classList.remove('hidden');document.body.style.overflow='hidden';icons();
+}
+const closeModal=()=>{$('#modal').classList.add('hidden');document.body.style.overflow=''};
+
+function add(id){
+  const it=cart.find(i=>i.id==id);
+  if(it)it.qty++;else cart.push({id:+id,qty:1});
+  drawCart();toast('Agregado al carrito');
+}
+function drawCart(){
+  const n=cart.reduce((s,i)=>s+i.qty,0),sum=cart.reduce((s,i)=>s+i.qty*PRODUCTS.find(p=>p.id==i.id).price,0);
+  $('#cartCount').textContent=n;$('#subtotal').textContent=money(sum);$('#total').textContent=money(sum);
+  $('#cartItems').innerHTML=cart.length?cart.map(i=>{const p=PRODUCTS.find(x=>x.id==i.id);return `<div class="flex gap-3 bg-slate-950 border border-slate-800 rounded-xl p-3">
+    <div class="relative w-20 h-20 rounded-lg overflow-hidden shrink-0">${imgHTML(p)}</div>
+    <div class="flex-1 min-w-0"><p class="font-semibold text-sm leading-snug">${p.name}</p><p class="text-acc font-bold">${money(p.price)}</p>
+    <div class="flex items-center gap-2 mt-2"><button data-dec="${p.id}" aria-label="Disminuir" class="w-7 h-7 rounded-lg bg-slate-800 hover:bg-slate-700">−</button><span class="w-6 text-center text-sm font-bold">${i.qty}</span><button data-inc="${p.id}" aria-label="Aumentar" class="w-7 h-7 rounded-lg bg-slate-800 hover:bg-slate-700">+</button>
+    <button data-del="${p.id}" aria-label="Eliminar" class="ml-auto p-1.5 text-slate-400 hover:text-rose-400"><i data-lucide="trash-2" class="w-4 h-4"></i></button></div></div></div>`}).join(''):`<div class="text-center text-slate-400 py-16"><i data-lucide="shopping-cart" class="w-10 h-10 mx-auto mb-3"></i>Tu carrito está vacío. Agrega productos desde el catálogo.</div>`;
+  icons();
+}
+const cartOpen=o=>{$('#drawer').classList.toggle('translate-x-full',!o);$('#overlay').classList.toggle('hidden',!o)};
+
+document.addEventListener('click',e=>{
+  const t=e.target.closest('[data-cat],[data-view],[data-add],[data-inc],[data-dec],[data-del],[data-go]');
+  if(!t)return;const d=t.dataset;
+  if(d.cat){setCat(d.cat);document.getElementById('catalogo').scrollIntoView()}
+  else if(d.go)setCat(d.go);
+  else if(d.view)openModal(d.view);
+  else if(d.add)add(d.add);
+  else if(d.inc)cart.find(i=>i.id==d.inc).qty++,drawCart();
+  else if(d.dec){const i=cart.find(i=>i.id==d.dec);if(--i.qty<1)cart=cart.filter(x=>x!==i);drawCart()}
+  else if(d.del){cart=cart.filter(i=>i.id!=d.del);drawCart()}
+});
+$('#search').addEventListener('input',e=>{q=e.target.value.trim().toLowerCase();render()});
+$('#sort').addEventListener('change',e=>{sort=e.target.value;render()});
+$('#openPublish').onclick=openPub;$('#btnOfertas').onclick=openPub;$('#closePub').onclick=closePub;
+$('#pub').addEventListener('click',e=>{if(e.target.id==='pub')closePub()});
+$('#closeModal').onclick=closeModal;
+$('#modal').addEventListener('click',e=>{if(e.target.id==='modal')closeModal()});
+$('#mAdd').onclick=()=>{add(current.id);closeModal();cartOpen(true)};
+$('#openCart').onclick=()=>cartOpen(true);$('#closeCart').onclick=()=>cartOpen(false);$('#overlay').onclick=()=>cartOpen(false);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closePub();cartOpen(false)}});
+$('#checkout').onclick=()=>{
+  if(!cart.length){toast('Agrega al menos un producto para continuar');return}
+  const sum=cart.reduce((s,i)=>s+i.qty*PRODUCTS.find(p=>p.id==i.id).price,0);
+  alert(`¡Solicitud enviada!\n\nRecibimos tu pedido por ${money(sum)}. Un asesor te contactará en menos de 2 horas para confirmar disponibilidad, pago y entrega.`);
+  cart=[];drawCart();cartOpen(false);
+};
+$('#quoteForm').addEventListener('submit',e=>{
+  e.preventDefault();const f=new FormData(e.target);
+  const msg=`Hola, tengo una consulta.\n\nNombre: ${f.get('n')}\nTeléfono: ${f.get('t')}\nMe interesa: ${f.get('i')}\nMensaje: ${f.get('m')||'(sin mensaje)'}`;
+  window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`,'_blank','noopener');
+  toast('Se abrió WhatsApp: toca Enviar para completar tu solicitud');e.target.reset();
+});
+$('#wa').href=`https://wa.me/${WA}?text=${encodeURIComponent('Hola, quiero información sobre sus productos.')}`;
+
+// ---------- Anuncios reales (Supabase) ----------
+async function loadListings(){
+  try{
+    const r=await fetch(`${SB}/rest/v1/listings?status=eq.active&order=created_at.desc&limit=200&select=*`,{headers:H});
+    if(!r.ok)throw new Error(r.status);
+    const rows=await r.json();
+    PRODUCTS=rows.map(x=>{
+      const imgs=(x.photo_urls||[]).filter(u=>u.startsWith(SB+'/storage/'));
+      return {id:x.id,cat:x.category,name:x.title,price:Number(x.price),desc:x.description,imgs,img:imgs[0]||'',
+        wa:String(x.seller_whatsapp).replace(/\D/g,''),
+        tag:(Date.now()-new Date(x.created_at))<6048e5?'Nuevo anuncio':'',
+        specs:{Vendedor:x.seller_name,Publicado:new Date(x.created_at).toLocaleDateString('es-VE')}};
+    });
+    loadErr=false;
+  }catch(e){loadErr=true}
+  loaded=true;render();
+}
+function openPub(){$('#pub').classList.remove('hidden');document.body.style.overflow='hidden'}
+function closePub(){$('#pub').classList.add('hidden');document.body.style.overflow=''}
+function showErr(m){const e=$('#pubErr');e.textContent=m;e.classList.remove('hidden')}
+// Reduce la foto a máx. 1280 px (JPEG) para que suba rápido y quepa en el límite de 5 MB
+function compress(file){
+  return new Promise((ok,fail)=>{
+    const img=new Image(),url=URL.createObjectURL(file);
+    img.onload=()=>{
+      const s=Math.min(1,1280/Math.max(img.width,img.height)),c=document.createElement('canvas');
+      c.width=Math.round(img.width*s);c.height=Math.round(img.height*s);
+      c.getContext('2d').drawImage(img,0,0,c.width,c.height);URL.revokeObjectURL(url);
+      c.toBlob(b=>b?ok(b):fail(new Error('No pudimos procesar una foto')),'image/jpeg',.82);
+    };
+    img.onerror=()=>fail(new Error('No pudimos leer una de las fotos'));
+    img.src=url;
+  });
+}
+async function uploadPhoto(file){
+  const blob=await compress(file),path=`${Date.now()}-${Math.random().toString(36).slice(2,10)}.jpg`;
+  const r=await fetch(`${SB}/storage/v1/object/listing-photos/${path}`,{method:'POST',headers:{...H,'Content-Type':'image/jpeg'},body:blob});
+  if(!r.ok)throw new Error('No se pudo subir una foto. Intenta de nuevo.');
+  return `${SB}/storage/v1/object/public/listing-photos/${path}`;
+}
+$('#pubForm').addEventListener('submit',async e=>{
+  e.preventDefault();
+  const f=new FormData(e.target),btn=$('#pubBtn');
+  $('#pubErr').classList.add('hidden');
+  if(f.get('web'))return; // trampa para bots
+  const files=[...$('#photos').files].slice(0,4),wa=String(f.get('wa')).replace(/\D/g,'');
+  if(!files.length)return showErr('Agrega al menos una foto.');
+  if(!/^[0-9]{10,15}$/.test(wa))return showErr('El WhatsApp debe llevar código de país y solo números. Ejemplo: 584141234567');
+  btn.disabled=true;btn.textContent='Publicando…';
+  try{
+    const urls=[];for(const fl of files)urls.push(await uploadPhoto(fl));
+    const body={category:f.get('cat'),title:f.get('title').trim(),price:Number(f.get('price')),description:f.get('desc').trim(),photo_urls:urls,seller_name:f.get('name').trim(),seller_whatsapp:wa};
+    const r=await fetch(`${SB}/rest/v1/listings`,{method:'POST',headers:{...H,'Content-Type':'application/json',Prefer:'return=minimal'},body:JSON.stringify(body)});
+    if(!r.ok)throw new Error('No se pudo guardar el anuncio. Revisa los datos e intenta de nuevo.');
+    e.target.reset();closePub();toast('¡Anuncio publicado!');await loadListings();
+    document.getElementById('catalogo').scrollIntoView();
+  }catch(x){showErr(x.message||'Ocurrió un error. Intenta de nuevo.')}
+  btn.disabled=false;btn.textContent='Publicar ahora';
+});
+
+drawNav();render();drawCart();icons();loadListings();
+</script>
+</body>
+</html>
