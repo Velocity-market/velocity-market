@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Velocity Market · Autos, motos, teléfonos, accesorios y servicios en Venezuela</title>
+<meta name="description" content="Compra y vende autos, motos, teléfonos, accesorios y servicios en todo el territorio venezolano. Publica tu anuncio por 2 USD.">
+<meta name="theme-color" content="#020617">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Velocity Market">
+<meta property="og:title" content="Velocity Market · Compra y vende en Venezuela">
+<meta property="og:description" content="Autos, motos, teléfonos, accesorios y servicios en todo el territorio venezolano. Publica tu anuncio por 2 USD.">
+<meta property="og:url" content="https://velocity-market.github.io/velocity-market/">
+<meta property="og:image" content="https://velocity-market.github.io/velocity-market/logo.jpg">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.453.0/dist/umd/lucide.min.js"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{sans:['Plus Jakarta Sans','system-ui','sans-serif']},colors:{acc:'#2f6bff'}}}}</script>
+<style>
+:root{color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:calc(88px + env(safe-area-inset-top,0px))}
+body{background:#020617;color:#f8fafc;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.ph{background:linear-gradient(135deg,#1e293b,#0f172a);display:flex;align-items:center;justify-content:center;color:#475569}
+.chip{transition:.2s}.chip.on{background:#2f6bff;color:#fff;border-color:#2f6bff}
+.f{margin-top:.25rem;width:100%;background:#020617;border:1px solid #1e293b;border-radius:.75rem;padding:.625rem .75rem;font-weight:400}.f:focus{outline:2px solid #2f6bff}
+#openCart,#overlay,#drawer{display:none!important}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body class="antialiased">
+
+<!-- NAVBAR -->
+<header class="fixed top-0 inset-x-0 z-40 bg-slate-950/90 backdrop-blur border-b border-slate-800" style="padding-top:env(safe-area-inset-top,0px)">
+  <div class="max-w-7xl mx-auto px-4 h-16 flex items-center gap-3">
+    <a href="#inicio" class="flex items-center gap-2 font-extrabold text-lg shrink-0"><img src="data:image/jpeg;base64,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" alt="Velocity Market" width="240" height="160" class="h-10 w-auto shrink-0" style="mix-blend-mode:screen"><span class="hidden sm:inline">Velocity<span class="text-acc">Market</span></span></a>
+    <nav class="hidden lg:flex items-center gap-1 ml-4 text-sm font-semibold text-slate-300" id="navLinks"></nav>
+    <div class="relative flex-1 min-w-0 max-w-md ml-auto">
+      <i data-lucide="search" class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-500"></i>
+      <input id="search" type="search" placeholder="Buscar…" aria-label="Buscar productos" class="w-full bg-slate-900 border border-slate-800 rounded-xl pl-9 pr-3 py-2 text-sm placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-acc">
+    </div>
+    <button id="authBtn" aria-label="Entrar" class="shrink-0 p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-acc flex items-center gap-1.5 text-sm font-semibold"><i data-lucide="user" class="w-5 h-5"></i><span id="authTxt" class="hidden md:inline">Entrar</span></button>
+    <button id="openPublish" class="shrink-0 bg-acc hover:bg-blue-500 transition rounded-xl px-3 sm:px-4 py-2.5 text-sm font-bold flex items-center gap-1.5"><i data-lucide="plus-circle" class="w-4 h-4"></i><span class="hidden sm:inline">Publicar</span></button>
+    <button id="openCart" aria-label="Abrir carrito" class="relative p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-acc">
+      <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+      <span id="cartCount" class="absolute -top-1.5 -right-1.5 min-w-[20px] h-5 px-1 rounded-full bg-acc text-xs font-bold grid place-items-center">0</span>
+    </button>
+  </div>
+</header>
+
+<main class="pt-16">
+<!-- HERO -->
+<section id="inicio" class="relative min-h-[78vh] flex items-center overflow-hidden bg-slate-900">
+  <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1800&q=80" alt="" class="absolute inset-0 w-full h-full object-cover opacity-50" onerror="this.remove()">
+  <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent"></div>
+  <div class="relative max-w-7xl mx-auto px-4 py-20 w-full">
+    <p class="inline-flex items-center gap-2 text-xs font-semibold bg-acc/15 text-blue-300 border border-acc/30 rounded-full px-3 py-1 mb-5"><i data-lucide="badge-check" class="w-4 h-4"></i>Publica por 2 USD · 30 días por anuncio</p>
+    <h1 class="text-4xl sm:text-6xl font-extrabold leading-[1.05] max-w-2xl">Tu próximo auto, moto o teléfono, <span class="text-acc">hoy mismo</span>.</h1>
+    <p class="mt-5 text-slate-300 text-lg max-w-xl">Compra y vende autos, motos, teléfonos y accesorios, o publica tus servicios de construcción, remodelación y más. Recibe contactos directo por WhatsApp.</p>
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a href="#catalogo" class="bg-acc hover:bg-blue-500 transition px-6 py-3.5 rounded-xl font-bold flex items-center gap-2"><i data-lucide="layout-grid" class="w-5 h-5"></i>Explorar catálogo</a>
+      <button type="button" id="btnOfertas" class="bg-white/10 hover:bg-white/20 border border-white/20 transition px-6 py-3.5 rounded-xl font-bold flex items-center gap-2"><i data-lucide="plus-circle" class="w-5 h-5"></i>Publicar mi anuncio</button>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFICIOS -->
+<section class="bg-slate-900 border-y border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 py-6 grid grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
+    <div class="flex items-center gap-3"><i data-lucide="message-circle" class="w-7 h-7 text-acc shrink-0"></i><div><b class="block">Contacto directo</b><span class="text-slate-400">Habla con el vendedor</span></div></div>
+    <div class="flex items-center gap-3"><i data-lucide="shield-check" class="w-7 h-7 text-acc shrink-0"></i><div><b class="block">Compra con cuidado</b><span class="text-slate-400">Revisa antes de pagar</span></div></div>
+    <div class="flex items-center gap-3"><i data-lucide="megaphone" class="w-7 h-7 text-acc shrink-0"></i><div><b class="block">Publica por 2 USD</b><span class="text-slate-400">30 días por anuncio</span></div></div>
+    <div class="flex items-center gap-3"><i data-lucide="headset" class="w-7 h-7 text-acc shrink-0"></i><div><b class="block">Soporte</b><span class="text-slate-400">Escríbenos por WhatsApp</span></div></div>
+  </div>
+  <div class="max-w-7xl mx-auto px-4 pb-5">
+    <p class="flex items-center justify-center gap-2 text-sm font-semibold text-blue-200 border-t border-slate-800 pt-4"><i data-lucide="map-pin" class="w-4 h-4 text-acc shrink-0"></i>Funciona en todo el territorio venezolano</p>
+  </div>
+</section>
+
+<!-- CATÁLOGO -->
+<section id="catalogo" class="max-w-7xl mx-auto px-4 py-14">
+  <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
+    <div><h2 class="text-3xl font-extrabold">Catálogo</h2><p id="resultInfo" class="text-slate-400 mt-1"></p></div>
+    <label class="flex items-center gap-2 text-sm text-slate-300">Ordenar por
+      <select id="sort" class="bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-acc">
+        <option value="rel">Relevancia</option><option value="asc">Precio: menor a mayor</option><option value="desc">Precio: mayor a menor</option>
+      </select>
+    </label>
+  </div>
+  <div id="chips" class="flex flex-wrap gap-2 mb-8"></div>
+  <div id="grid" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"></div>
+  <p id="empty" class="hidden text-center text-slate-400 py-16">No encontramos productos con esa búsqueda. Prueba con otra palabra o cambia de categoría.</p>
+</section>
+
+<!-- CÓMO FUNCIONA -->
+<section id="como" class="max-w-7xl mx-auto px-4 py-14">
+  <h2 class="text-3xl font-extrabold">Cómo funciona</h2>
+  <p class="text-slate-400 mt-1">Tres pasos para vender. Si solo vas a comprar, con registrarte puedes contactar a los vendedores.</p>
+  <div class="grid md:grid-cols-3 gap-5 mt-8">
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6"><span class="w-11 h-11 rounded-xl bg-acc/15 text-acc grid place-items-center"><i data-lucide="user-plus" class="w-5 h-5"></i></span><h3 class="font-bold text-lg mt-4">1. Regístrate</h3><p class="text-slate-400 text-sm mt-2">Crea tu cuenta con tu correo Gmail y una contraseña. Es rápido y gratis.</p></div>
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6"><span class="w-11 h-11 rounded-xl bg-acc/15 text-acc grid place-items-center"><i data-lucide="wallet" class="w-5 h-5"></i></span><h3 class="font-bold text-lg mt-4">2. Publica y paga 2 USD</h3><p class="text-slate-400 text-sm mt-2">Sube tu anuncio con fotos y paga por Pago Móvil. Te enviamos los datos por WhatsApp.</p></div>
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6"><span class="w-11 h-11 rounded-xl bg-acc/15 text-acc grid place-items-center"><i data-lucide="rocket" class="w-5 h-5"></i></span><h3 class="font-bold text-lg mt-4">3. Se activa en 1 hora</h3><p class="text-slate-400 text-sm mt-2">Verificamos tu pago y tu anuncio queda visible por 30 días. Puedes renovarlo cuando quieras.</p></div>
+  </div>
+  <button type="button" id="howPub" class="mt-8 bg-acc hover:bg-blue-500 transition px-6 py-3.5 rounded-xl font-bold inline-flex items-center gap-2"><i data-lucide="plus-circle" class="w-5 h-5"></i>Publicar mi anuncio</button>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="bg-slate-900 border-y border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 py-14 grid lg:grid-cols-2 gap-10">
+    <div>
+      <h2 class="text-3xl font-extrabold">Escríbenos si tienes dudas</h2>
+      <p class="text-slate-300 mt-3 max-w-md">Cuéntanos qué buscas o en qué necesitas ayuda y te responderemos por WhatsApp.</p>
+      <ul class="mt-6 space-y-3 text-slate-300">
+        <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-acc shrink-0"></i>Respuesta rápida por WhatsApp</li>
+        <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-acc shrink-0"></i>Te ayudamos a publicar tu anuncio</li>
+        <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-acc shrink-0"></i>Orientación para comprar y vender con seguridad</li>
+      </ul>
+    </div>
+    <form id="quoteForm" class="bg-slate-950 border border-slate-800 rounded-2xl p-6 grid gap-4">
+      <div class="grid sm:grid-cols-2 gap-4">
+        <label class="text-sm font-semibold">Nombre<input required name="n" class="mt-1 w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2.5 font-normal focus:outline-none focus:ring-2 focus:ring-acc"></label>
+        <label class="text-sm font-semibold">Teléfono<input required type="tel" name="t" class="mt-1 w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2.5 font-normal focus:outline-none focus:ring-2 focus:ring-acc"></label>
+      </div>
+      <label class="text-sm font-semibold">Me interesa
+        <select name="i" class="mt-1 w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2.5 font-normal focus:outline-none focus:ring-2 focus:ring-acc">
+          <option>Comprar un vehículo</option><option>Vender mi vehículo</option><option>Teléfonos y accesorios</option><option>Otra consulta</option>
+        </select></label>
+      <label class="text-sm font-semibold">Mensaje<textarea name="m" rows="3" class="mt-1 w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2.5 font-normal focus:outline-none focus:ring-2 focus:ring-acc" placeholder="Modelo, presupuesto, plazo…"></textarea></label>
+      <button class="bg-acc hover:bg-blue-500 transition rounded-xl py-3 font-bold flex items-center justify-center gap-2"><i data-lucide="message-circle" class="w-5 h-5"></i>Enviar por WhatsApp</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="max-w-7xl mx-auto px-4 py-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-8 text-sm text-slate-400">
+  <div><div class="flex items-center gap-2 font-extrabold text-lg text-white mb-3"><img src="data:image/jpeg;base64,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" alt="" width="240" height="160" class="h-9 w-auto shrink-0" style="mix-blend-mode:screen">Velocity<span class="text-acc">Market</span></div><p>Compra y vende autos, motos, teléfonos y accesorios directo con otras personas.</p></div>
+  <div><b class="text-white block mb-3">Comprar</b><ul class="space-y-2"><li><a class="hover:text-white" href="#catalogo" data-go="Autos">Autos</a></li><li><a class="hover:text-white" href="#catalogo" data-go="Motos">Motos</a></li><li><a class="hover:text-white" href="#catalogo" data-go="Teléfonos">Teléfonos</a></li><li><a class="hover:text-white" href="#catalogo" data-go="Accesorios">Accesorios</a></li><li><a class="hover:text-white" href="#catalogo" data-go="Servicios">Servicios</a></li></ul></div>
+  <div><b class="text-white block mb-3">Quiénes somos</b><p class="leading-relaxed">Velocity Market es un marketplace venezolano para comprar y vender autos, motos, teléfonos y accesorios. Reunimos en un solo lugar a quienes venden y a quienes buscan: publicas tu anuncio, el comprador ve fotos y precio al instante y el trato se cierra directo por WhatsApp. También puedes ofrecer tus servicios, como construcción y remodelación.</p></div>
+  <div><b class="text-white block mb-3">Síguenos</b><div class="flex gap-3">
+    <a href="#" aria-label="Instagram" class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-acc"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+    <a href="#" aria-label="Facebook" class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-acc"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+    <a href="#" aria-label="YouTube" class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-acc"><i data-lucide="youtube" class="w-5 h-5"></i></a></div></div>
+  <div class="sm:col-span-2 lg:col-span-4 border-t border-slate-800 pt-6 flex flex-wrap gap-x-6 gap-y-2 text-slate-300">
+    <button type="button" data-info="terms" class="hover:text-white hover:underline">Términos y condiciones</button>
+    <button type="button" data-info="privacy" class="hover:text-white hover:underline">Política de privacidad</button>
+    <button type="button" data-info="safety" class="hover:text-white hover:underline">Consejos de seguridad</button>
+    <a href="#como" class="hover:text-white hover:underline">Cómo funciona</a>
+  </div>
+  <p class="sm:col-span-2 lg:col-span-4">© 2026 Velocity Market. Todos los derechos reservados.</p>
+</footer>
+
+<!-- CONTADOR DE VISITAS -->
+<div id="visitBox" class="hidden fixed left-4 z-30 flex flex-col items-center gap-0.5 bg-slate-900/90 backdrop-blur border border-slate-800 rounded-2xl px-3 py-2 shadow-lg" style="bottom:calc(1rem + env(safe-area-inset-bottom,0px))" title="Personas que han visitado la página" aria-label="Visitas a la página">
+  <i data-lucide="eye" class="w-5 h-5 text-acc"></i>
+  <span id="visitNum" class="text-sm font-extrabold leading-none"></span>
+  <span class="text-[10px] text-slate-400 leading-none">visitas</span>
+</div>
+
+<!-- WHATSAPP FLOTANTE -->
+<a id="wa" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp" class="fixed right-4 z-30 w-14 h-14 rounded-full bg-[#25D366] grid place-items-center shadow-xl hover:scale-105 transition" style="bottom:calc(1rem + env(safe-area-inset-bottom,0px))"><i data-lucide="message-circle" class="w-7 h-7 text-white"></i></a>
+
+<!-- MODAL -->
+<div id="modal" class="hidden fixed inset-0 z-50 bg-black/70 p-4 overflow-y-auto" role="dialog" aria-modal="true">
+  <div class="max-w-4xl mx-auto my-6 bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden grid md:grid-cols-2 relative">
+    <button id="closeModal" aria-label="Cerrar" class="absolute top-3 right-3 z-10 p-2 rounded-full bg-slate-950/80 hover:bg-slate-950"><i data-lucide="x" class="w-5 h-5"></i></button>
+    <div id="mImg" class="min-h-[240px] md:min-h-full"></div>
+    <div class="p-6 flex flex-col gap-4">
+      <div><span id="mTag" class="text-xs font-bold px-2.5 py-1 rounded-full bg-acc/20 text-blue-300"></span>
+      <h3 id="mName" class="text-2xl font-extrabold mt-3"></h3><p id="mPrice" class="text-3xl font-extrabold text-acc mt-1"></p></div>
+      <p id="mDesc" class="text-slate-300"></p>
+      <div><b class="text-sm">Ficha técnica</b><dl id="mSpecs" class="mt-2 divide-y divide-slate-800 text-sm"></dl></div>
+      <div class="flex flex-col sm:flex-row gap-3 mt-auto">
+        <button id="mAdd" style="display:none" class="flex-1 bg-acc hover:bg-blue-500 transition rounded-xl py-3 font-bold flex items-center justify-center gap-2"><i data-lucide="shopping-cart" class="w-5 h-5"></i>Agregar al carrito</button>
+        <a id="mWa" target="_blank" rel="noopener" class="flex-1 bg-[#25D366] hover:brightness-110 transition rounded-xl py-3 font-bold text-slate-950 flex items-center justify-center gap-2"><i data-lucide="message-circle" class="w-5 h-5"></i><span id="mWaTxt">Consultar por WhatsApp</span></a>
+      </div>
+      <a id="mReport" target="_blank" rel="noopener" class="text-xs text-slate-400 hover:text-rose-400 underline text-center">Reportar este anuncio</a>
+    </div>
+  </div>
+</div>
+
+<!-- CARRITO -->
+<div id="overlay" class="hidden fixed inset-0 z-50 bg-black/60"></div>
+<aside id="drawer" class="fixed top-0 right-0 z-50 h-full w-full max-w-md bg-slate-900 border-l border-slate-800 flex flex-col translate-x-full transition-transform duration-300" style="padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)">
+  <div class="flex items-center justify-between p-4 border-b border-slate-800"><h3 class="font-extrabold text-lg">Tu carrito</h3><button id="closeCart" aria-label="Cerrar carrito" class="p-2 rounded-lg hover:bg-slate-800"><i data-lucide="x" class="w-5 h-5"></i></button></div>
+  <div id="cartItems" class="flex-1 overflow-y-auto p-4 space-y-3"></div>
+  <div class="p-4 border-t border-slate-800 space-y-3">
+    <div class="flex justify-between text-sm text-slate-300"><span>Subtotal</span><span id="subtotal"></span></div>
+    <div class="flex justify-between text-lg font-extrabold"><span>Total</span><span id="total"></span></div>
+    <button id="checkout" class="w-full bg-acc hover:bg-blue-500 transition rounded-xl py-3 font-bold">Finalizar compra / Solicitar cotización</button>
+  </div>
+</aside>
+
+<!-- PUBLICAR ANUNCIO -->
+<div id="pub" class="hidden fixed inset-0 z-50 bg-black/70 p-4 overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="pubTitle">
+  <form id="pubForm" class="max-w-xl mx-auto my-6 bg-slate-900 border border-slate-800 rounded-2xl p-6 grid gap-4 relative">
+    <button type="button" id="closePub" aria-label="Cerrar" class="absolute top-3 right-3 p-2 rounded-full hover:bg-slate-800"><i data-lucide="x" class="w-5 h-5"></i></button>
+    <h3 id="pubTitle" class="text-2xl font-extrabold">Publicar anuncio</h3>
+    <p class="text-sm bg-acc/15 border border-acc/30 rounded-xl p-3 text-blue-100">Publicar cuesta <b>2 USD por anuncio, por 30 días</b> (se renueva). Tu anuncio estará disponible en 1 hora, después de que verifiquemos tu pago.</p>
+    <label class="text-sm font-semibold">Categoría<select name="cat" class="f"><option>Autos</option><option>Motos</option><option>Teléfonos</option><option>Accesorios</option><option>Servicios</option></select></label>
+    <label class="text-sm font-semibold">Título<input required name="title" minlength="3" maxlength="120" placeholder="Ej: Toyota Corolla 2018, 60.000 km" class="f"></label>
+    <label class="text-sm font-semibold">Precio (USD)<input required name="price" type="number" min="1" step="any" inputmode="decimal" class="f"></label>
+    <label class="text-sm font-semibold">Descripción<textarea required name="desc" rows="4" maxlength="2000" placeholder="Estado, año, kilometraje, detalles importantes…" class="f"></textarea></label>
+    <label class="text-sm font-semibold">Fotos (de 1 a 4)<input required id="photos" type="file" accept="image/*" multiple class="f"></label>
+    <div class="grid sm:grid-cols-2 gap-4">
+      <label class="text-sm font-semibold">Tu nombre<input required name="name" minlength="2" maxlength="80" class="f"></label>
+      <label class="text-sm font-semibold">Tu WhatsApp<input required name="wa" type="tel" inputmode="numeric" placeholder="584141234567" class="f"></label>
+    </div>
+    <p class="text-xs text-slate-400 -mt-2">El WhatsApp va con código de país y solo números. Será visible para los compradores.</p>
+    <input name="web" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+    <p id="pubErr" class="hidden text-rose-400 text-sm"></p>
+    <button id="pubBtn" class="bg-acc hover:bg-blue-500 transition rounded-xl py-3 font-bold">Publicar ahora</button>
+  </form>
+  <div id="pubDone" class="hidden max-w-xl mx-auto my-6 bg-slate-900 border border-slate-800 rounded-2xl p-6 grid gap-4 text-center">
+    <i data-lucide="clock" class="w-10 h-10 text-acc mx-auto"></i>
+    <h3 class="text-2xl font-extrabold">¡Anuncio recibido!</h3>
+    <p class="text-slate-300">Estará disponible en 1 hora, una vez verifiquemos tu pago de <b>2 USD</b> (válido por 30 días). Escríbenos por WhatsApp y te enviamos los datos de Pago Móvil.</p>
+    <a id="doneWa" target="_blank" rel="noopener" class="bg-[#25D366] rounded-xl py-3 font-bold text-slate-950 flex items-center justify-center gap-2"><i data-lucide="message-circle" class="w-5 h-5"></i>Recibir datos de pago</a>
+    <button type="button" id="doneClose" class="text-sm text-slate-300 underline">Cerrar</button>
+  </div>
+</div>
+
+<!-- INFORMACIÓN LEGAL -->
+<div id="info" class="hidden fixed inset-0 z-[52] bg-black/70 p-4 overflow-y-auto" role="dialog" aria-modal="true">
+  <div class="max-w-2xl mx-auto my-6 bg-slate-900 border border-slate-800 rounded-2xl p-6 relative">
+    <button type="button" id="closeInfo" aria-label="Cerrar" class="absolute top-3 right-3 p-2 rounded-full hover:bg-slate-800"><i data-lucide="x" class="w-5 h-5"></i></button>
+    <h3 id="infoTitle" class="text-2xl font-extrabold pr-10"></h3>
+    <div id="infoBody" class="mt-4 space-y-4 text-sm text-slate-300 leading-relaxed"></div>
+  </div>
+</div>
+
+<!-- MI CUENTA -->
+<div id="acct" class="hidden fixed inset-0 z-[52] bg-black/70 p-4 overflow-y-auto" role="dialog" aria-modal="true">
+  <div class="max-w-lg mx-auto my-6 bg-slate-900 border border-slate-800 rounded-2xl p-6 relative">
+    <button type="button" id="closeAcct" aria-label="Cerrar" class="absolute top-3 right-3 p-2 rounded-full hover:bg-slate-800"><i data-lucide="x" class="w-5 h-5"></i></button>
+    <h3 class="text-2xl font-extrabold pr-10">Mi cuenta</h3>
+    <p id="acctMail" class="text-sm text-slate-400 mt-1 break-all"></p>
+    <h4 class="font-bold mt-5 mb-3">Mis anuncios</h4>
+    <div id="acctList" class="space-y-3"></div>
+    <button type="button" id="acctOut" class="mt-6 w-full border border-slate-700 hover:border-rose-400 rounded-xl py-2.5 text-sm font-semibold">Cerrar sesión</button>
+  </div>
+</div>
+
+<!-- REGISTRO / INICIO DE SESIÓN -->
+<div id="authM" class="hidden fixed inset-0 z-[55] bg-black/70 p-4 overflow-y-auto" role="dialog" aria-modal="true">
+  <form id="authForm" class="max-w-sm mx-auto my-10 bg-slate-900 border border-slate-800 rounded-2xl p-6 grid gap-4 relative">
+    <button type="button" id="closeAuth" aria-label="Cerrar" class="absolute top-3 right-3 p-2 rounded-full hover:bg-slate-800"><i data-lucide="x" class="w-5 h-5"></i></button>
+    <h3 id="authTitle" class="text-2xl font-extrabold">Crear cuenta</h3>
+    <p class="text-sm text-slate-400">Regístrate con tu Gmail para contactar vendedores o publicar anuncios.</p>
+    <label class="text-sm font-semibold">Correo Gmail<input required id="aEmail" type="email" autocomplete="email" placeholder="tunombre@gmail.com" class="f"></label>
+    <label class="text-sm font-semibold">Contraseña (mínimo 8 caracteres)<input required id="aPass" type="password" minlength="8" autocomplete="current-password" class="f"></label>
+    <p id="authErr" class="hidden text-rose-400 text-sm"></p>
+    <button id="authBtn2" class="bg-acc hover:bg-blue-500 transition rounded-xl py-3 font-bold">Crear cuenta</button>
+    <button type="button" id="authSwitch" class="text-sm text-slate-300 underline">Ya tengo cuenta: iniciar sesión</button>
+  </form>
+</div>
+
+<div id="toast" class="fixed left-1/2 -translate-x-1/2 z-[60] bg-slate-100 text-slate-900 font-semibold text-sm px-4 py-2.5 rounded-xl shadow-xl opacity-0 pointer-events-none transition-opacity" style="bottom:calc(5.5rem + env(safe-area-inset-bottom,0px))"></div>
+
+<script>
+const WA='584245334146';
+const SB='https://sjftwqnasmppdwtjlvpw.supabase.co';
+const KEY='sb_publishable_mgcTqrJyn1zjTLpk_RqlEA_SBPxFD6A';
+const H={apikey:KEY};
+let session=null;
+try{session=JSON.parse(localStorage.getItem('vm_session')||'null')}catch(e){}
+function saveSession(s){session=s;try{s?localStorage.setItem('vm_session',JSON.stringify(s)):localStorage.removeItem('vm_session')}catch(e){}}
+const AH=()=>session?{apikey:KEY,Authorization:'Bearer '+session.access_token}:H;
+async function authCall(path,body){
+  const r=await fetch(`${SB}/auth/v1/${path}`,{method:'POST',headers:{...H,'Content-Type':'application/json'},body:JSON.stringify(body)});
+  const d=await r.json().catch(()=>({}));
+  if(!r.ok)throw new Error(d.msg||d.error_description||d.message||'Error de autenticación');
+  return d;
+}
+function toSession(d){return d.access_token?{access_token:d.access_token,refresh_token:d.refresh_token,expires_at:Date.now()+(d.expires_in||3600)*1000,email:(d.user&&d.user.email)||'',uid:d.user&&d.user.id}:null}
+async function ensureSession(){
+  if(!session)return false;
+  if(session.expires_at-Date.now()>60000)return true;
+  try{const s=toSession(await authCall('token?grant_type=refresh_token',{refresh_token:session.refresh_token}));s.email=s.email||session.email;s.uid=s.uid||session.uid;saveSession(s);return true}
+  catch(e){saveSession(null);return false}
+}
+const CATS=['Todos','Autos','Motos','Teléfonos','Accesorios','Servicios'];
+const ICON={Autos:'car',Motos:'bike',Teléfonos:'smartphone',Accesorios:'headphones',Servicios:'hammer'};
+let PRODUCTS=[];
+const $=s=>document.querySelector(s);
+const money=n=>'$'+n.toLocaleString('es-VE');
+let cat='Todos',q='',sort='rel',onlyDeals=false,cart=[],current=null,loadErr=false,loaded=false;
+const icons=()=>lucide.createIcons();
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+const imgHTML=p=>`<div class="ph w-full h-full"><i data-lucide="${ICON[p.cat]}" class="w-12 h-12"></i></div>${p.img?`<img src="${esc(p.img)}" alt="${esc(p.name)}" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()">`:''}`;
+const toast=m=>{const t=$('#toast');t.textContent=m;t.style.opacity=1;clearTimeout(toast.t);toast.t=setTimeout(()=>t.style.opacity=0,2200)};
+
+function drawNav(){
+  $('#navLinks').innerHTML=CATS.map(c=>`<button data-cat="${c}" class="px-3 py-2 rounded-lg hover:bg-slate-800 hover:text-white">${c}</button>`).join('');
+  $('#chips').innerHTML=CATS.map(c=>`<button data-cat="${c}" class="chip border border-slate-700 rounded-full px-5 py-2 text-sm font-semibold ${c===cat&&!onlyDeals?'on':''}">${c}</button>`).join('');
+}
+function setCat(c){cat=c;onlyDeals=false;drawNav();render()}
+
+function render(){
+  let list=PRODUCTS.filter(p=>(cat==='Todos'||p.cat===cat)&&(!onlyDeals||p.tag==='Oferta'||p.tag==='Destacado')&&(p.name+' '+p.cat+' '+p.desc).toLowerCase().includes(q));
+  if(sort==='asc')list.sort((a,b)=>a.price-b.price);
+  if(sort==='desc')list.sort((a,b)=>b.price-a.price);
+  $('#resultInfo').textContent=loaded?`${list.length} ${list.length===1?'anuncio':'anuncios'}`:'Cargando anuncios…';
+  $('#empty').classList.toggle('hidden',list.length>0||!loaded);
+  $('#empty').textContent=loadErr?'No pudimos cargar los anuncios. Revisa tu conexión e intenta de nuevo.':(PRODUCTS.length?'No encontramos anuncios con esa búsqueda.':'Aún no hay anuncios. ¡Sé el primero en publicar!');
+  $('#grid').innerHTML=list.map(p=>{
+    const k=Object.entries(p.specs).slice(0,2).map(([a,b])=>`<span class="bg-slate-800 rounded-md px-2 py-1">${a}: ${esc(b)}</span>`).join('');
+    return `<article class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col hover:border-acc/60 transition">
+      <div class="relative aspect-[4/3] overflow-hidden">${imgHTML(p)}${p.tag?`<span class="absolute top-3 left-3 ${p.tagCls} text-xs font-bold px-2.5 py-1 rounded-full">${esc(p.tag)}</span>`:''}</div>
+      <div class="p-4 flex flex-col gap-3 flex-1">
+        <div><p class="text-xs text-slate-400">${p.cat}</p><h3 class="font-bold leading-snug">${esc(p.name)}</h3></div>
+        <div class="flex flex-wrap gap-1.5 text-xs text-slate-300">${k}</div>
+        <p class="text-2xl font-extrabold mt-auto">${money(p.price)}</p>
+        <div class="grid grid-cols-2 gap-2">
+          <button data-view="${p.id}" class="border border-slate-700 hover:border-acc rounded-xl py-2.5 text-sm font-semibold">Ver detalles</button>
+          ${p.wa?`<a href="https://wa.me/${p.wa}?text=${encodeURIComponent('Hola, vi tu anuncio en Velocity Market: '+p.name)}" target="_blank" rel="noopener" class="bg-[#25D366] hover:brightness-110 text-slate-950 rounded-xl py-2.5 text-sm font-bold flex items-center justify-center gap-1.5"><i data-lucide="message-circle" class="w-4 h-4"></i>WhatsApp</a>`:`<button data-auth class="bg-slate-800 hover:bg-slate-700 rounded-xl py-2.5 text-sm font-bold flex items-center justify-center gap-1.5"><i data-lucide="lock" class="w-4 h-4"></i>Contactar</button>`}
+        </div></div></article>`}).join('');
+  icons();
+}
+
+function openModal(id){
+  const p=PRODUCTS.find(x=>x.id==id);current=p;
+  $('#mImg').className='relative min-h-[240px] md:min-h-full';$('#mImg').innerHTML=imgHTML(p);
+  if(p.imgs.length>1)$('#mImg').insertAdjacentHTML('beforeend',`<div class="absolute bottom-3 left-3 right-3 flex gap-2 overflow-x-auto">${p.imgs.map(u=>`<img src="${esc(u)}" alt="" class="w-14 h-14 object-cover rounded-lg border border-white/30 cursor-pointer shrink-0" onclick="this.closest('#mImg').querySelector('img').src=this.src">`).join('')}</div>`);
+  $('#mTag').textContent=p.tag||p.cat;$('#mName').textContent=p.name;$('#mPrice').textContent=money(p.price);$('#mDesc').textContent=p.desc;
+  $('#mSpecs').innerHTML=Object.entries(p.specs).map(([a,b])=>`<div class="flex justify-between py-2"><dt class="text-slate-400">${a}</dt><dd class="font-semibold">${esc(b)}</dd></div>`).join('');
+  $('#mReport').href=`https://wa.me/${WA}?text=${encodeURIComponent('Quiero reportar este anuncio: '+p.name+' (ID '+p.id+')')}`;
+  if(p.wa){$('#mWa').href=`https://wa.me/${p.wa}?text=${encodeURIComponent('Hola, vi tu anuncio en Velocity Market: '+p.name+' ('+money(p.price)+')')}`;$('#mWa').onclick=null;$('#mWaTxt').textContent='Consultar por WhatsApp'}
+  else{$('#mWa').href='#';$('#mWaTxt').textContent='Regístrate para contactar';$('#mWa').onclick=e=>{e.preventDefault();closeModal();openAuth()}}
+  $('#modal').classList.remove('hidden');document.body.style.overflow='hidden';icons();
+}
+const closeModal=()=>{$('#modal').classList.add('hidden');document.body.style.overflow=''};
+
+function add(id){
+  const it=cart.find(i=>i.id==id);
+  if(it)it.qty++;else cart.push({id:+id,qty:1});
+  drawCart();toast('Agregado al carrito');
+}
+function drawCart(){
+  const n=cart.reduce((s,i)=>s+i.qty,0),sum=cart.reduce((s,i)=>s+i.qty*PRODUCTS.find(p=>p.id==i.id).price,0);
+  $('#cartCount').textContent=n;$('#subtotal').textContent=money(sum);$('#total').textContent=money(sum);
+  $('#cartItems').innerHTML=cart.length?cart.map(i=>{const p=PRODUCTS.find(x=>x.id==i.id);return `<div class="flex gap-3 bg-slate-950 border border-slate-800 rounded-xl p-3">
+    <div class="relative w-20 h-20 rounded-lg overflow-hidden shrink-0">${imgHTML(p)}</div>
+    <div class="flex-1 min-w-0"><p class="font-semibold text-sm leading-snug">${p.name}</p><p class="text-acc font-bold">${money(p.price)}</p>
+    <div class="flex items-center gap-2 mt-2"><button data-dec="${p.id}" aria-label="Disminuir" class="w-7 h-7 rounded-lg bg-slate-800 hover:bg-slate-700">−</button><span class="w-6 text-center text-sm font-bold">${i.qty}</span><button data-inc="${p.id}" aria-label="Aumentar" class="w-7 h-7 rounded-lg bg-slate-800 hover:bg-slate-700">+</button>
+    <button data-del="${p.id}" aria-label="Eliminar" class="ml-auto p-1.5 text-slate-400 hover:text-rose-400"><i data-lucide="trash-2" class="w-4 h-4"></i></button></div></div></div>`}).join(''):`<div class="text-center text-slate-400 py-16"><i data-lucide="shopping-cart" class="w-10 h-10 mx-auto mb-3"></i>Tu carrito está vacío. Agrega productos desde el catálogo.</div>`;
+  icons();
+}
+const cartOpen=o=>{$('#drawer').classList.toggle('translate-x-full',!o);$('#overlay').classList.toggle('hidden',!o)};
+
+document.addEventListener('click',e=>{
+  const t=e.target.closest('[data-cat],[data-view],[data-add],[data-inc],[data-dec],[data-del],[data-go],[data-auth],[data-info]');
+  if(!t)return;const d=t.dataset;if(t.hasAttribute('data-auth')){openAuth();return}
+  if(t.dataset.info){openInfo(t.dataset.info);return}
+  if(d.cat){setCat(d.cat);document.getElementById('catalogo').scrollIntoView()}
+  else if(d.go)setCat(d.go);
+  else if(d.view)openModal(d.view);
+  else if(d.add)add(d.add);
+  else if(d.inc)cart.find(i=>i.id==d.inc).qty++,drawCart();
+  else if(d.dec){const i=cart.find(i=>i.id==d.dec);if(--i.qty<1)cart=cart.filter(x=>x!==i);drawCart()}
+  else if(d.del){cart=cart.filter(i=>i.id!=d.del);drawCart()}
+});
+$('#search').addEventListener('input',e=>{q=e.target.value.trim().toLowerCase();render()});
+$('#sort').addEventListener('change',e=>{sort=e.target.value;render()});
+$('#openPublish').onclick=openPub;$('#btnOfertas').onclick=openPub;$('#closePub').onclick=closePub;
+$('#pub').addEventListener('click',e=>{if(e.target.id==='pub')closePub()});
+$('#closeModal').onclick=closeModal;
+$('#modal').addEventListener('click',e=>{if(e.target.id==='modal')closeModal()});
+$('#mAdd').onclick=()=>{add(current.id);closeModal();cartOpen(true)};
+$('#openCart').onclick=()=>cartOpen(true);$('#closeCart').onclick=()=>cartOpen(false);$('#overlay').onclick=()=>cartOpen(false);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closePub();closeAuth();closeInfo();closeAcct();cartOpen(false)}});
+$('#checkout').onclick=()=>{
+  if(!cart.length){toast('Agrega al menos un producto para continuar');return}
+  const sum=cart.reduce((s,i)=>s+i.qty*PRODUCTS.find(p=>p.id==i.id).price,0);
+  alert(`¡Solicitud enviada!\n\nRecibimos tu pedido por ${money(sum)}. Un asesor te contactará en menos de 2 horas para confirmar disponibilidad, pago y entrega.`);
+  cart=[];drawCart();cartOpen(false);
+};
+$('#quoteForm').addEventListener('submit',e=>{
+  e.preventDefault();const f=new FormData(e.target);
+  const msg=`Hola, tengo una consulta.\n\nNombre: ${f.get('n')}\nTeléfono: ${f.get('t')}\nMe interesa: ${f.get('i')}\nMensaje: ${f.get('m')||'(sin mensaje)'}`;
+  window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`,'_blank','noopener');
+  toast('Se abrió WhatsApp: toca Enviar para completar tu solicitud');e.target.reset();
+});
+$('#wa').href=`https://wa.me/${WA}?text=${encodeURIComponent('Hola quiero pagar los 2 USD para un anuncio\nColoque la siguiente información 👇🏻\n(nombre)\n(cédula)\n(título de la publicación)\n(correo)')}`;
+
+// ---------- Anuncios reales (Supabase) ----------
+async function loadListings(){
+  try{
+    await ensureSession();
+    const cols='id,created_at,category,title,price,description,photo_urls,seller_name,status,expires_at'+(session?',seller_whatsapp,user_id':'');
+    const r=await fetch(`${SB}/rest/v1/listings?order=created_at.desc&limit=200&select=${cols}`,{headers:AH()});
+    if(!r.ok)throw new Error(r.status);
+    const rows=await r.json();
+    PRODUCTS=rows.map(x=>{
+      const imgs=(x.photo_urls||[]).filter(u=>u.startsWith(SB+'/storage/'));
+      return {id:x.id,cat:x.category,name:x.title,price:Number(x.price),desc:x.description,imgs,img:imgs[0]||'',
+        wa:x.seller_whatsapp?String(x.seller_whatsapp).replace(/\D/g,''):'',own:!!session&&x.user_id===session.uid,exp:x.expires_at,st:x.status,
+        tag:x.status==='pending'?'En revisión':x.status==='hidden'?'Suspendido':(x.expires_at&&new Date(x.expires_at)<Date.now())?'Vencido':(Date.now()-new Date(x.created_at))<6048e5?'Nuevo anuncio':'',tagCls:(x.status==='active'&&!(x.expires_at&&new Date(x.expires_at)<Date.now()))?'bg-emerald-500':'bg-amber-500',
+        specs:{Vendedor:x.seller_name,Publicado:new Date(x.created_at).toLocaleDateString('es-VE')}};
+    });
+    loadErr=false;
+  }catch(e){loadErr=true}
+  loaded=true;render();
+}
+function openPub(){if(!session){openAuth('publish');return}$('#pubDone').classList.add('hidden');$('#pubForm').classList.remove('hidden');$('#pub').classList.remove('hidden');document.body.style.overflow='hidden'}
+function closePub(){$('#pub').classList.add('hidden');document.body.style.overflow=''}
+function showErr(m){const e=$('#pubErr');e.textContent=m;e.classList.remove('hidden')}
+// Reduce la foto a máx. 1280 px (JPEG) para que suba rápido y quepa en el límite de 5 MB
+function compress(file){
+  return new Promise((ok,fail)=>{
+    const img=new Image(),url=URL.createObjectURL(file);
+    img.onload=()=>{
+      const s=Math.min(1,1280/Math.max(img.width,img.height)),c=document.createElement('canvas');
+      c.width=Math.round(img.width*s);c.height=Math.round(img.height*s);
+      c.getContext('2d').drawImage(img,0,0,c.width,c.height);URL.revokeObjectURL(url);
+      c.toBlob(b=>b?ok(b):fail(new Error('No pudimos procesar una foto')),'image/jpeg',.82);
+    };
+    img.onerror=()=>fail(new Error('No pudimos leer una de las fotos'));
+    img.src=url;
+  });
+}
+async function uploadPhoto(file){
+  const blob=await compress(file),path=`${Date.now()}-${Math.random().toString(36).slice(2,10)}.jpg`;
+  const r=await fetch(`${SB}/storage/v1/object/listing-photos/${path}`,{method:'POST',headers:{...AH(),'Content-Type':'image/jpeg'},body:blob});
+  if(!r.ok)throw new Error('No se pudo subir una foto. Intenta de nuevo.');
+  return `${SB}/storage/v1/object/public/listing-photos/${path}`;
+}
+$('#pubForm').addEventListener('submit',async e=>{
+  e.preventDefault();
+  const f=new FormData(e.target),btn=$('#pubBtn');
+  $('#pubErr').classList.add('hidden');
+  if(f.get('web'))return; // trampa para bots
+  const files=[...$('#photos').files].slice(0,4),wa=String(f.get('wa')).replace(/\D/g,'');
+  if(!files.length)return showErr('Agrega al menos una foto.');
+  if(!/^[0-9]{10,15}$/.test(wa))return showErr('El WhatsApp debe llevar código de país y solo números. Ejemplo: 584141234567');
+  if(!await ensureSession()){closePub();openAuth('publish');return}
+  btn.disabled=true;btn.textContent='Publicando…';
+  try{
+    const urls=[];for(const fl of files)urls.push(await uploadPhoto(fl));
+    const body={category:f.get('cat'),title:f.get('title').trim(),price:Number(f.get('price')),description:f.get('desc').trim(),photo_urls:urls,seller_name:f.get('name').trim(),seller_whatsapp:wa,status:'pending'};
+    const r=await fetch(`${SB}/rest/v1/listings`,{method:'POST',headers:{...AH(),'Content-Type':'application/json',Prefer:'return=minimal'},body:JSON.stringify(body)});
+    if(!r.ok)throw new Error('No se pudo guardar el anuncio. Revisa los datos e intenta de nuevo.');
+    $('#doneWa').href=`https://wa.me/${WA}?text=${encodeURIComponent('Hola quiero pagar los 2 USD para un anuncio\nColoque la siguiente información 👇🏻\n(nombre)\n(cédula)\n'+body.title+'\n'+session.email)}`;
+    e.target.reset();$('#pubForm').classList.add('hidden');$('#pubDone').classList.remove('hidden');await loadListings();
+  }catch(x){showErr(x.message||'Ocurrió un error. Intenta de nuevo.')}
+  btn.disabled=false;btn.textContent='Publicar ahora';
+});
+
+// ---------- Registro / sesión (solo Gmail) ----------
+let authMode='signup',afterAuth=null;
+function setAuthMode(m){authMode=m;const s=m==='signup';$('#authTitle').textContent=s?'Crear cuenta':'Iniciar sesión';$('#authBtn2').textContent=s?'Crear cuenta':'Entrar';$('#authSwitch').textContent=s?'Ya tengo cuenta: iniciar sesión':'No tengo cuenta: registrarme'}
+function openAuth(next){afterAuth=next||null;setAuthMode('signup');$('#authErr').classList.add('hidden');$('#authM').classList.remove('hidden');document.body.style.overflow='hidden'}
+function closeAuth(){$('#authM').classList.add('hidden');if($('#pub').classList.contains('hidden')&&$('#modal').classList.contains('hidden'))document.body.style.overflow=''}
+function drawAuth(){$('#authTxt').textContent=session?'Mi cuenta':'Entrar';$('#authBtn').setAttribute('aria-label',session?'Mi cuenta':'Entrar')}
+function authErr(m){const e=$('#authErr');e.textContent=m;e.classList.remove('hidden')}
+function esAuth(m){m=String(m);
+  if(/already registered|already exists/i.test(m))return 'Ese correo ya está registrado. Toca "Ya tengo cuenta" para entrar.';
+  if(/invalid login/i.test(m))return 'Correo o contraseña incorrectos.';
+  if(/database error|gmail/i.test(m))return 'Solo se permiten correos @gmail.com.';
+  if(/password should|at least/i.test(m))return 'La contraseña debe tener al menos 8 caracteres.';
+  if(/rate limit/i.test(m))return 'Demasiados intentos. Espera unos minutos.';
+  return 'No se pudo completar. Intenta de nuevo.';
+}
+$('#authBtn').onclick=()=>{session?openAcct():openAuth()};
+$('#closeAuth').onclick=closeAuth;
+$('#authM').addEventListener('click',e=>{if(e.target.id==='authM')closeAuth()});
+$('#authSwitch').onclick=()=>setAuthMode(authMode==='signup'?'login':'signup');
+$('#doneClose').onclick=closePub;
+$('#authForm').addEventListener('submit',async e=>{
+  e.preventDefault();
+  const em=$('#aEmail').value.trim().toLowerCase(),pw=$('#aPass').value,b=$('#authBtn2');
+  $('#authErr').classList.add('hidden');
+  if(!/^[^@\s]+@gmail\.com$/.test(em))return authErr('Usa un correo Gmail (termina en @gmail.com).');
+  b.disabled=true;
+  try{
+    const d=authMode==='signup'?await authCall('signup',{email:em,password:pw}):await authCall('token?grant_type=password',{email:em,password:pw});
+    let s=toSession(d);
+    if(!s&&authMode==='signup')s=toSession(await authCall('token?grant_type=password',{email:em,password:pw}));
+    if(!s)throw new Error('No se pudo iniciar sesión.');
+    s.email=em;saveSession(s);drawAuth();e.target.reset();closeAuth();toast('Sesión iniciada: '+em);
+    await loadListings();
+    if(afterAuth==='publish')openPub();
+  }catch(x){authErr(esAuth(x.message))}
+  b.disabled=false;
+});
+
+// ---------- Información legal ----------
+const INFO={
+terms:{t:`Términos y condiciones`,s:[
+[`¿Qué es Velocity Market?`,`Es una plataforma donde personas y empresas publican anuncios de autos, motos, teléfonos, accesorios y servicios. Solo facilitamos el contacto entre quien vende y quien compra: no somos parte de la negociación, no vendemos los productos ni prestamos los servicios anunciados.`],
+[`Responsabilidad`,`Cada anunciante es responsable de que su publicación sea veraz, de tener derecho a vender lo que ofrece y de cumplir lo que promete. Velocity Market no garantiza la calidad, el estado, la legalidad ni la entrega de lo anunciado, ni se hace responsable por acuerdos o pagos entre usuarios. Lee los consejos de seguridad antes de cualquier trato.`],
+[`Tu cuenta`,`Para contactar vendedores o publicar debes registrarte con un correo Gmail y una contraseña. Eres responsable de mantener tu contraseña en secreto y de la actividad de tu cuenta.`],
+[`Costo y duración`,`Publicar un anuncio cuesta 2 USD por 30 días, que se pagan por Pago Móvil (en su equivalente en bolívares). Los datos de pago se envían por WhatsApp. Cuando verificamos el pago, el anuncio se activa, normalmente en 1 hora, y se muestra durante 30 días. Para mantenerlo visible debes renovarlo antes de que venza. Si tienes algún problema con un pago, escríbenos por WhatsApp.`],
+[`Contenido no permitido`,`No se permiten anuncios falsos o engañosos, vehículos o equipos robados o con documentos irregulares, productos ilegales ni contenido ofensivo. Podemos suspender o eliminar cualquier anuncio o cuenta que incumpla estas reglas o que reciba reportes confirmados, con o sin aviso previo.`],
+[`Cambios`,`Podemos actualizar estos términos. Si sigues usando la página después de un cambio, entendemos que lo aceptas. Última actualización: noviembre de 2026.`]]},
+privacy:{t:`Política de privacidad`,s:[
+[`Qué datos recopilamos`,`Tu correo Gmail y tu contraseña (que se guarda protegida, no en texto visible). Si publicas: título, descripción, precio, fotos, tu nombre y tu número de WhatsApp. Cuando pagas por WhatsApp podemos pedirte tu nombre y tu cédula.`],
+[`Qué se muestra públicamente`,`El título, la descripción, el precio, las fotos y el nombre del vendedor se ven en el catálogo. Tu número de WhatsApp solo lo ven los usuarios registrados. Tu correo y tu cédula nunca se muestran.`],
+[`Para qué los usamos`,`Para crear tu cuenta, mostrar tus anuncios, verificar tus pagos, avisarte cuando tu anuncio vence y ayudarte con cualquier duda. No vendemos tus datos.`],
+[`Dónde se guardan`,`La página usa servicios de terceros para funcionar, como Supabase para la base de datos y GitHub para alojar el sitio.`],
+[`Tus derechos`,`Puedes pedir que corrijamos o eliminemos tu cuenta y tus anuncios escribiéndonos por WhatsApp.`],
+[`Un consejo`,`Comparte tu cédula solo por el chat de WhatsApp de Velocity Market, nunca en el texto de un anuncio.`]]},
+safety:{t:`Consejos de seguridad`,s:[
+[`Si vas a comprar`,`Ve el vehículo o producto en persona antes de pagar. Nunca pagues por adelantado ni "reserves" con dinero sin verlo. Reúnete en un lugar público, de día y acompañado. Desconfía de precios demasiado bajos o de vendedores con mucha prisa.`],
+[`Vehículos`,`Pide el título de propiedad y la cédula del dueño, compara el serial de la carrocería y la placa con los documentos, y comprueba que quien vende sea el dueño.`],
+[`Teléfonos`,`Revisa que enciendan, que no estén bloqueados ni reportados y que el IMEI coincida con el de la caja.`],
+[`Servicios`,`Pide el presupuesto por escrito, pregunta por trabajos anteriores y paga por avance, no todo al inicio.`],
+[`Si vas a vender`,`No entregues el vehículo o el producto hasta confirmar que el dinero llegó a tu cuenta. Desconfía de comprobantes enviados solo como captura: verifica en tu banco.`],
+[`Sobre Velocity Market`,`Solo cobramos por publicar el anuncio. Nunca te pedimos dinero por una compra, ni claves ni códigos. Si algo te parece sospechoso, usa "Reportar este anuncio" dentro del anuncio.`]]}
+};
+function openInfo(k){const d=INFO[k];$('#infoTitle').textContent=d.t;$('#infoBody').innerHTML=d.s.map(x=>`<div><h4 class="font-bold text-white mb-1">${x[0]}</h4><p>${x[1]}</p></div>`).join('');$('#info').classList.remove('hidden');document.body.style.overflow='hidden'}
+function closeInfo(){$('#info').classList.add('hidden');document.body.style.overflow=''}
+// ---------- Mi cuenta ----------
+function acctRow(p){
+  const left=p.exp?Math.ceil((new Date(p.exp)-Date.now())/864e5):null;
+  let est,btn;
+  if(p.st==='pending'){est='En revisión: se activa en 1 hora, después de verificar tu pago.';btn='Enviar datos de pago'}
+  else if(p.st==='hidden'){est='Suspendido. Escríbenos si tienes dudas.';btn='Escribirnos'}
+  else if(left!==null&&left<=0){est='Vencido. Renuévalo para volver a mostrarlo.';btn='Renovar por 2 USD'}
+  else{est=`Activo · vence el ${new Date(p.exp).toLocaleDateString('es-VE')} (${left} ${left===1?'día':'días'})`;btn='Renovar por 2 USD'}
+  const verb=p.st==='pending'?'pagar los 2 USD para un anuncio':'renovar mi anuncio por 2 USD';
+  const msg=`Hola quiero ${verb}\nColoque la siguiente información 👇🏻\n(nombre)\n(cédula)\n${p.name}\n${session.email}`;
+  return `<div class="bg-slate-950 border border-slate-800 rounded-xl p-4"><p class="font-semibold">${esc(p.name)}</p><p class="text-xs text-slate-400 mt-1">${esc(est)}</p><a href="https://wa.me/${WA}?text=${encodeURIComponent(msg)}" target="_blank" rel="noopener" class="mt-3 inline-flex items-center gap-1.5 bg-[#25D366] text-slate-950 rounded-lg px-3 py-2 text-sm font-bold"><i data-lucide="message-circle" class="w-4 h-4"></i>${btn}</a></div>`;
+}
+function openAcct(){
+  const mine=PRODUCTS.filter(p=>p.own);
+  $('#acctMail').textContent=session.email;
+  $('#acctList').innerHTML=mine.length?mine.map(acctRow).join(''):'<p class="text-sm text-slate-400">Aún no has publicado anuncios. Toca “Publicar” para crear el primero.</p>';
+  $('#acct').classList.remove('hidden');document.body.style.overflow='hidden';icons();
+}
+function closeAcct(){$('#acct').classList.add('hidden');document.body.style.overflow=''}
+$('#closeInfo').onclick=closeInfo;$('#closeAcct').onclick=closeAcct;
+$('#info').addEventListener('click',e=>{if(e.target.id==='info')closeInfo()});
+$('#acct').addEventListener('click',e=>{if(e.target.id==='acct')closeAcct()});
+$('#acctOut').onclick=()=>{saveSession(null);closeAcct();drawAuth();loadListings();toast('Sesión cerrada')};
+$('#howPub').onclick=openPub;
+
+// ---------- Contador de visitas (una por dispositivo) ----------
+async function countVisit(){
+  let isNew=false;
+  try{isNew=!localStorage.getItem('vm_visited')}catch(e){}
+  try{
+    const r=await fetch(`${SB}/rest/v1/rpc/register_visit`,{method:'POST',headers:{...H,'Content-Type':'application/json'},body:JSON.stringify({new_visit:isNew})});
+    if(!r.ok)throw new Error(r.status);
+    const n=await r.json();
+    $('#visitNum').textContent=Number(n).toLocaleString('es-VE');
+    $('#visitBox').classList.remove('hidden');
+    if(isNew)try{localStorage.setItem('vm_visited','1')}catch(e){}
+  }catch(e){}
+}
+
+drawNav();render();drawCart();icons();drawAuth();loadListings();countVisit();
+</script>
+</body>
+</html>
